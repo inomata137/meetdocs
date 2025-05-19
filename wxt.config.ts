@@ -6,7 +6,7 @@ const webExtConfig = defineWebExtConfig({
 })
 
 const manifest: UserManifestFn = () => ({
-  name: 'MeetDocs',
+  name: import.meta.env.PROD ? 'MeetDocs' : 'MeetDocs (Dev)',
   description: 'Easy access to attached resources from Google Meet',
   version: '1.0',
   manifest_version: 3,

@@ -1,7 +1,7 @@
+import { applyPreference } from '@/entrypoints/lib/dark-mode.ts'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App.tsx'
-import { applyPreference } from './dark-mode'
 
 import './style.css'
 

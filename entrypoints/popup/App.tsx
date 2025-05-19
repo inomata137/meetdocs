@@ -1,14 +1,16 @@
-import { Suspense } from 'react'
+import { useState } from 'react'
 import { Header } from './components/Header'
 import { MeetingList } from './components/MeetingList'
+import { Settings } from './components/Settings'
 
 export function App() {
+  const [tab, setTab] = useState<'main' | 'settings'>('main')
+
   return (
     <div className="w-48">
-      <Header />
-      <Suspense fallback={<div className="text-sm px-2 py-1">Loading...</div>}>
-        <MeetingList />
-      </Suspense>
+      <Header setTab={setTab} />
+      {tab === 'main' && <MeetingList />}
+      {tab === 'settings' && <Settings setTab={setTab} />}
     </div>
   )
 }

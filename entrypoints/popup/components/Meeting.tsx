@@ -10,10 +10,12 @@ function isAttachment(
   return typeof attachment.fileUrl === 'string'
 }
 
-export const Meeting = (props: {
+type MeetingProps = {
   title: string
   attachments: calendar_v3.Schema$EventAttachment[]
-}) => {
+}
+
+export function Meeting(props: MeetingProps) {
   const title = props.title
   const attachments = props.attachments.filter(isAttachment)
   if (attachments.length === 0) {
